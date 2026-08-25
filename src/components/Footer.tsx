@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, MapPin, Phone } from "lucide-react";
-import logoAsset from "@/assets/metrocare-lockup.png.asset.json";
+const logoUrl =
+  "https://cdn.builder.io/api/v1/image/assets%2F031a10a79dca4b47bcf06fd8c14a6703%2F0833781fd4ef4de380bd2e9c0084dccd?format=webp&width=800&height=1200";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { boroughLocations, statenIslandNeighborhoods } from "@/data/locations";
 import { solutions } from "@/data/solutions";
@@ -20,7 +21,7 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <img
-              src={logoAsset.url}
+              src={logoUrl}
               alt={`${t("brand")} logo`}
               className="h-11 w-auto"
               width={317}

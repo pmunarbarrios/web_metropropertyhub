@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Menu, Phone } from "lucide-react";
 const logoUrl =
-  "https://cdn.builder.io/api/v1/image/assets%2F031a10a79dca4b47bcf06fd8c14a6703%2F269f9b59b8284ea79e82c8495d066dce?format=webp&width=800&height=1200";
+  "https://cdn.builder.io/api/v1/image/assets%2F031a10a79dca4b47bcf06fd8c14a6703%2F0833781fd4ef4de380bd2e9c0084dccd?format=webp&width=800&height=1200";
 import { useState } from "react";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { Button } from "@/components/ui/button";
