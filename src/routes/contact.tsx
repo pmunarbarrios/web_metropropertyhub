@@ -26,7 +26,6 @@ function ContactPage() {
   const items = [
     { icon: Phone, label: t("contact.phone"), value: BUSINESS.phoneDisplay, href: `tel:${BUSINESS.phoneDisplay}` },
     { icon: Mail, label: t("contact.email"), value: BUSINESS.email, href: `mailto:${BUSINESS.email}` },
-    { icon: MapPin, label: t("contact.address"), value: BUSINESS.address },
     { icon: MapPin, label: t("contact.area"), value: t("contact.areaValue") },
   ];
 
