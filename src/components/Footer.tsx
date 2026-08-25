@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 const logoUrl =
-  "https://cdn.builder.io/api/v1/image/assets%2F031a10a79dca4b47bcf06fd8c14a6703%2F8c45de5c4a9d4d8aa5de7b3f258c972e?format=webp&width=800&height=1200";
+  "https://cdn.builder.io/api/v1/image/assets%2F031a10a79dca4b47bcf06fd8c14a6703%2Febc2d4826deb4712bf9d7620f60e4e21?format=webp&width=800&height=1200";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { boroughLocations, statenIslandNeighborhoods } from "@/data/locations";
 import { solutions } from "@/data/solutions";
@@ -148,10 +148,6 @@ export function Footer() {
             <Mail className="h-4 w-4" aria-hidden="true" />
             {BUSINESS.email}
           </a>
-          <span className="inline-flex items-center gap-2">
-            <MapPin className="h-4 w-4" aria-hidden="true" />
-            {BUSINESS.address}
-          </span>
         </div>
 
         <p className="mt-8 text-xs text-muted-foreground">
