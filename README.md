@@ -1565,7 +1565,7 @@ Después refina el diseño visual para acercarlo a la referencia proporcionada d
 
 This project was built with [Lovable](https://lovable.dev).
 
-**Live app**: https://metro-pro-hub.lovable.app
+**Live app**: https://www.metropropertycare.co
 
 ## Build with Lovable
 

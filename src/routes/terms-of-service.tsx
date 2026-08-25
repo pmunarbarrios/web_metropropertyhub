@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/SectionHeading";
 import { useI18n } from "@/i18n";
+import { abs } from "@/lib/site";
 
 const TITLE = "Terms of Service | Metro Pro Hub";
 const DESCRIPTION = "Terms that apply to the use of this website and to service requests.";
@@ -12,8 +13,9 @@ export const Route = createFileRoute("/terms-of-service")({
       { name: "description", content: DESCRIPTION },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
+      { property: "og:url", content: abs("/terms-of-service") },
     ],
-    links: [{ rel: "canonical", href: "/terms-of-service" }],
+    links: [{ rel: "canonical", href: abs("/terms-of-service") }],
   }),
   component: TermsPage,
 });

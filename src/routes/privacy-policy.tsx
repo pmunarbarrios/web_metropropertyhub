@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/SectionHeading";
 import { useI18n } from "@/i18n";
+import { abs } from "@/lib/site";
 
 const TITLE = "Privacy Policy | Metro Pro Hub";
 const DESCRIPTION =
@@ -13,8 +14,9 @@ export const Route = createFileRoute("/privacy-policy")({
       { name: "description", content: DESCRIPTION },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
+      { property: "og:url", content: abs("/privacy-policy") },
     ],
-    links: [{ rel: "canonical", href: "/privacy-policy" }],
+    links: [{ rel: "canonical", href: abs("/privacy-policy") }],
   }),
   component: PrivacyPage,
 });

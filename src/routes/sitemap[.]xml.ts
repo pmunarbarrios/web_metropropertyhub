@@ -4,7 +4,7 @@ import { activeLocations } from "@/data/locations";
 import { services } from "@/data/services";
 import { solutions } from "@/data/solutions";
 
-const BASE_URL = "https://metro-pro-hub.lovable.app";
+const BASE_URL = "https://www.metropropertycare.co";
 
 interface SitemapEntry {
   path: string;

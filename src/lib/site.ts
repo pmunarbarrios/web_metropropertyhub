@@ -5,7 +5,7 @@
  */
 import { BUSINESS } from "@/lib/contact";
 
-export const SITE_URL = "https://metro-pro-hub.lovable.app";
+export const SITE_URL = "https://www.metropropertycare.co";
 export const BRAND = BUSINESS.name;
 
 export const abs = (path: string) => `${SITE_URL}${path === "/" ? "" : path}`;
