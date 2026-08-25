@@ -56,8 +56,11 @@ export function localBusinessLd(areaNames: string[]) {
     "@type": "LocalBusiness",
     "@id": `${SITE_URL}/#business`,
     name: BRAND,
+    description:
+      "Property painting, repairs and cleaning services across Staten Island and the five boroughs of NYC.",
     url: SITE_URL,
     telephone: BUSINESS.phoneHref.replace("tel:", ""),
+    priceRange: "$$",
     image: `${SITE_URL}/favicon.png`,
     address: {
       "@type": "PostalAddress",
