@@ -85,7 +85,12 @@ export function serviceLd(input: {
     description: input.description,
     url: abs(input.path),
     serviceType: input.name,
-    provider: { "@type": "LocalBusiness", name: BRAND, url: SITE_URL },
+    provider: {
+      "@type": "LocalBusiness",
+      "@id": `${SITE_URL}/#business`,
+      name: BRAND,
+      url: SITE_URL,
+    },
     areaServed: input.areaNames.map((name) => ({ "@type": "Place", name })),
   };
 }
