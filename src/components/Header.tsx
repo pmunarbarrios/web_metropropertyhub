@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Menu, Phone } from "lucide-react";
-import logoAsset from "@/assets/metrocare-lockup.png.asset.json";
+const logoUrl =
+  "https://cdn.builder.io/api/v1/image/assets%2F031a10a79dca4b47bcf06fd8c14a6703%2F269f9b59b8284ea79e82c8495d066dce?format=webp&width=800&height=1200";
 import { useState } from "react";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { Button } from "@/components/ui/button";
@@ -28,7 +29,7 @@ export function Header() {
       <div className="container-page flex h-18 items-center justify-between gap-4 py-3">
         <Link to="/" className="flex items-center gap-3" aria-label={t("brand")}>
           <img
-            src={logoAsset.url}
+            src={logoUrl}
             alt={`${t("brand")} logo`}
             className="h-10 w-auto sm:h-11"
             width={317}
