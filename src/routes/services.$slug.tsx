@@ -5,7 +5,7 @@ import { CTASection } from "@/components/CTASection";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ServiceGrid } from "@/components/ServiceCard";
 import { Button } from "@/components/ui/button";
-import { boroughLocations, locationNames } from "@/data/locations";
+import { boroughLocations } from "@/data/locations";
 import { serviceBySlug, services } from "@/data/services";
 import { useI18n } from "@/i18n";
 import { trackEvent } from "@/lib/analytics";
@@ -29,7 +29,7 @@ export const Route = createFileRoute("/services/$slug")({
       links: canonical(path),
       scripts: [
         ldScript(
-          serviceLd({ name, description: metaDescription, path, areaNames: locationNames }),
+          serviceLd({ name, description: metaDescription, path, areaNames: ["New York City"] }),
         ),
         ldScript(
           breadcrumbLd([

@@ -5,10 +5,10 @@
  */
 import { BUSINESS } from "@/lib/contact";
 
-export const SITE_URL = "https://metro-pro-hub.lovable.app";
+export const SITE_URL = "https://www.metropropertycare.co";
 export const BRAND = BUSINESS.name;
 
-export const abs = (path: string) => `${SITE_URL}${path === "/" ? "" : path}`;
+export const abs = (path: string) => `${SITE_URL}${path}`;
 
 export const pageTitle = (title: string) => (title.includes(BRAND) ? title : `${title} | ${BRAND}`);
 
@@ -56,8 +56,11 @@ export function localBusinessLd(areaNames: string[]) {
     "@type": "LocalBusiness",
     "@id": `${SITE_URL}/#business`,
     name: BRAND,
+    description:
+      "Property painting, repairs and cleaning services across Staten Island and the five boroughs of NYC.",
     url: SITE_URL,
     telephone: BUSINESS.phoneHref.replace("tel:", ""),
+    priceRange: "$$",
     image: `${SITE_URL}/favicon.png`,
     address: {
       "@type": "PostalAddress",
@@ -82,7 +85,12 @@ export function serviceLd(input: {
     description: input.description,
     url: abs(input.path),
     serviceType: input.name,
-    provider: { "@type": "LocalBusiness", name: BRAND, url: SITE_URL },
+    provider: {
+      "@type": "LocalBusiness",
+      "@id": `${SITE_URL}/#business`,
+      name: BRAND,
+      url: SITE_URL,
+    },
     areaServed: input.areaNames.map((name) => ({ "@type": "Place", name })),
   };
 }
