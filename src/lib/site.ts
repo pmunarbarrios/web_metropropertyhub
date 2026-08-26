@@ -8,7 +8,7 @@ import { BUSINESS } from "@/lib/contact";
 export const SITE_URL = "https://www.metropropertycare.co";
 export const BRAND = BUSINESS.name;
 
-export const abs = (path: string) => `${SITE_URL}${path === "/" ? "" : path}`;
+export const abs = (path: string) => `${SITE_URL}${path}`;
 
 export const pageTitle = (title: string) => (title.includes(BRAND) ? title : `${title} | ${BRAND}`);
 
