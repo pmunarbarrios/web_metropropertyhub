@@ -31,6 +31,7 @@ export type QuotePayload = {
   email: string;
   propertyType: string;
   service: string;
+  borough: string;
   address: string;
   city: string;
   state: string;
