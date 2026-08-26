@@ -134,7 +134,7 @@ function RootComponent() {
       <I18nProvider>
         <div className="flex min-h-screen flex-col">
           <Header />
-          <main id="main" className="flex-1 pb-16 md:pb-0">
+          <main id="main" className="flex-1 pb-[calc(4rem+env(safe-area-inset-bottom))] lg:pb-0">
             {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
             <Outlet />
           </main>
