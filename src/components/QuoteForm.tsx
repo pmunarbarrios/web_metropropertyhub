@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { quoteServiceOptions } from "@/data/services";
 import { useI18n } from "@/i18n";
 import { trackEvent } from "@/lib/analytics";
-import { N8nError, submitQuoteRequest } from "@/services/n8n";
+import { submitQuoteRequest } from "@/services/n8n";
 
 type FormState = {
   fullName: string;
@@ -33,7 +33,7 @@ const EMPTY: FormState = {
 const boroughs = ["Staten Island", "Brooklyn", "Queens", "Manhattan", "Bronx"];
 
 export function QuoteForm({ initialService }: { initialService?: string }) {
-  const { lang, t } = useI18n();
+  const { t } = useI18n();
   const [values, setValues] = useState<FormState>({
     ...EMPTY,
     service: matchService(initialService),
@@ -70,29 +70,19 @@ export function QuoteForm({ initialService }: { initialService?: string }) {
 
     try {
       await submitQuoteRequest({
-        language: lang,
         fullName: values.fullName.trim(),
         phone: values.phone.trim(),
         email: values.email.trim(),
-        propertyType: "",
         service: values.service,
         borough: values.borough,
         address: values.address.trim(),
-        city: values.borough,
-        state: "NY",
-        zipCode: "",
-        projectDetails: values.details.trim(),
-        preferredContactMethod: "",
+        details: values.details.trim(),
       });
       trackEvent("quote_form_submitted", { service: values.service });
       setStatus("success");
-    } catch (error) {
+    } catch {
       setStatus("error");
-      setErrorMessage(
-        error instanceof N8nError && error.kind === "not-configured"
-          ? t("quote.notConfigured")
-          : t("err.network"),
-      );
+      setErrorMessage("We couldn't submit your request — please call us at (646) 456-6547");
     }
   };
 
@@ -324,5 +314,9 @@ function SelectField({
 
 function FieldError({ id, message }: { id: string; message?: string }) {
   if (!message) return null;
-  return <p id={id} className="mt-2 text-sm text-destructive">{message}</p>;
+  return (
+    <p id={id} className="mt-2 text-sm text-destructive">
+      {message}
+    </p>
+  );
 }

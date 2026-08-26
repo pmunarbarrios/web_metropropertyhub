@@ -24,21 +24,13 @@ export type ChatResponse = {
 };
 
 export type QuotePayload = {
-  source: "website-quote-form";
-  language: Language;
   fullName: string;
   phone: string;
   email: string;
-  propertyType: string;
   service: string;
   borough: string;
   address: string;
-  city: string;
-  state: string;
-  zipCode: string;
-  projectDetails: string;
-  preferredContactMethod: string;
-  timestamp: string;
+  details: string;
 };
 
 export class N8nError extends Error {
@@ -52,10 +44,10 @@ export class N8nError extends Error {
 }
 
 const CHAT_PROXY = "/api/public/chat";
-const QUOTE_PROXY = "/api/public/quote";
+const QUOTE_FORM_URL =
+  "https://t3wmhckk-5678.use2.devtunnels.ms/form/0aeaf117-d85a-400b-8e65-8b9ca34718ab";
 
 const chatUrl = () => import.meta.env['VITE_N8N_WEBHOOK_URL'] || CHAT_PROXY;
-const quoteUrl = () => import.meta.env['VITE_N8N_QUOTE_WEBHOOK_URL'] || QUOTE_PROXY;
 
 const DEFAULT_TIMEOUT = 20_000;
 
@@ -124,15 +116,31 @@ export async function sendChatMessage(input: {
   };
 }
 
-export async function submitQuoteRequest(
-  payload: Omit<QuotePayload, "source" | "timestamp">,
-): Promise<{ ok: true }> {
-  const full: QuotePayload = {
-    ...payload,
-    source: "website-quote-form",
-    timestamp: new Date().toISOString(),
-  };
-  await postJson<unknown>(quoteUrl(), full, 25_000);
+export async function submitQuoteRequest(payload: QuotePayload): Promise<{ ok: true }> {
+  const formData = new FormData();
+  Object.entries(payload).forEach(([field, value]) => formData.append(field, value));
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 25_000);
+
+  try {
+    const response = await fetch(QUOTE_FORM_URL, {
+      method: "POST",
+      body: formData,
+      signal: controller.signal,
+    });
+    clearTimeout(timer);
+    if (!response.ok) {
+      throw new N8nError(`Request failed with status ${response.status}`, "server");
+    }
+  } catch (error) {
+    clearTimeout(timer);
+    if (error instanceof N8nError) throw error;
+    if (error instanceof DOMException && error.name === "AbortError") {
+      throw new N8nError("Request timed out", "timeout");
+    }
+    throw new N8nError("Network request failed", "network");
+  }
+
   return { ok: true };
 }
 

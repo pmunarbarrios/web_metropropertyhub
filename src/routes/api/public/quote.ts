@@ -9,7 +9,6 @@ const quoteSchema = z.object({
   email: z.string().email().max(200),
   propertyType: z.string().max(60),
   service: z.string().max(80),
-  borough: z.string().min(1).max(80),
   address: z.string().max(200),
   city: z.string().max(80),
   state: z.string().max(40),
