@@ -118,7 +118,15 @@ export async function sendChatMessage(input: {
 
 export async function submitQuoteRequest(payload: QuotePayload): Promise<{ ok: true }> {
   const formData = new FormData();
-  Object.entries(payload).forEach(([field, value]) => formData.append(field, value));
+  formData.append("field-0", payload.fullName);
+  formData.append("field-1", payload.phone);
+  formData.append("field-2", payload.email);
+  formData.append("field-3", JSON.stringify([payload.service]));
+  formData.append("field-4", JSON.stringify([payload.borough]));
+  formData.append("field-5", payload.address);
+  formData.append("field-6", payload.details);
+  formData.append("submittedAt", new Date().toISOString());
+  formData.append("formMode", "form");
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), 25_000);
 

@@ -73,7 +73,9 @@ export function QuoteForm({ initialService }: { initialService?: string }) {
         fullName: values.fullName.trim(),
         phone: values.phone.trim(),
         email: values.email.trim(),
-        service: values.service,
+        service:
+          quoteServiceOptions("en").find((option) => option.value === values.service)?.label ??
+          values.service,
         borough: values.borough,
         address: values.address.trim(),
         details: values.details.trim(),
