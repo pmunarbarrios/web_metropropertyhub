@@ -58,6 +58,8 @@ export function Header() {
           <LanguageSwitcher />
           <a
             href={BUSINESS.phoneHref}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => trackEvent("phone_clicked", { location: "header" })}
             className="inline-flex items-center gap-1.5 text-sm font-semibold text-foreground hover:text-accent"
           >
@@ -112,6 +114,8 @@ export function Header() {
                 <Button asChild variant="outline" size="lg" className="w-full">
                   <a
                     href={BUSINESS.phoneHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onClick={() => trackEvent("phone_clicked", { location: "mobile_menu" })}
                   >
                     <Phone className="h-4 w-4" aria-hidden="true" />

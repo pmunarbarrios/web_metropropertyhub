@@ -24,7 +24,13 @@ function ContactPage() {
   const { t } = useI18n();
 
   const items = [
-    { icon: Phone, label: t("contact.phone"), value: BUSINESS.phoneDisplay, href: `tel:${BUSINESS.phoneDisplay}` },
+    {
+      icon: Phone,
+      label: t("contact.phone"),
+      value: BUSINESS.phoneDisplay,
+      href: BUSINESS.phoneHref,
+      isWhatsApp: true,
+    },
     { icon: Mail, label: t("contact.email"), value: BUSINESS.email, href: `mailto:${BUSINESS.email}` },
     { icon: MapPin, label: t("contact.area"), value: t("contact.areaValue") },
   ];
@@ -48,8 +54,10 @@ function ContactPage() {
                 {item.href ? (
                   <a
                     href={item.href}
+                    target={item.isWhatsApp ? "_blank" : undefined}
+                    rel={item.isWhatsApp ? "noopener noreferrer" : undefined}
                     onClick={() =>
-                      item.href?.startsWith("tel:")
+                      item.isWhatsApp
                         ? trackEvent("phone_clicked", { location: "contact_page" })
                         : undefined
                     }

@@ -18,7 +18,7 @@ export const es: Record<TranslationKey, string> = {
   "cta.learnMore": "Ver Más",
   "cta.explore": "Ver Nuestros Servicios",
   "cta.chat": "Hablar con Nosotros",
-  "cta.call": "Llamar Ahora",
+  "cta.call": "Escríbenos por WhatsApp",
   "cta.viewAll": "Ver Todos los Servicios",
 
   "hero.headline": "Trabajos Pequeños de Propiedad. Servicio Profesional. En Todo NYC.",
@@ -201,7 +201,7 @@ export const es: Record<TranslationKey, string> = {
   "reviews.why2": "Un contacto con nombre que responde llamadas y mensajes.",
   "reviews.why3": "Fotos del trabajo terminado si las pides.",
   "reviews.why4": "Ningún trabajo es demasiado pequeño: una habitación o una unidad es normal para nosotros.",
-  "cta.callNow": "Llamar Ahora",
+  "cta.callNow": "Escríbenos por WhatsApp",
   "cta.pricing": "Ver Precios",
   "cta.availability": "Consultar Disponibilidad",
   "cta.viewSolutions": "Cómo trabajamos",

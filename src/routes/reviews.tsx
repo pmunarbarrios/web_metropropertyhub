@@ -56,7 +56,9 @@ function ReviewsPage() {
                 <a href={`mailto:${BUSINESS.email}`}>{BUSINESS.email}</a>
               </Button>
               <Button asChild variant="outline">
-                <a href={BUSINESS.phoneHref}>{t("cta.callNow")}</a>
+                <a href={BUSINESS.phoneHref} target="_blank" rel="noopener noreferrer">
+                  {t("cta.callNow")}
+                </a>
               </Button>
             </div>
           </div>
