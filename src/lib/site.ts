@@ -59,7 +59,7 @@ export function localBusinessLd(areaNames: string[]) {
     description:
       "Property painting, repairs and cleaning services across Staten Island and the five boroughs of NYC.",
     url: SITE_URL,
-    telephone: BUSINESS.phoneHref.replace("tel:", ""),
+    telephone: `+1${BUSINESS.phoneDisplay.replace(/\D/g, "")}`,
     priceRange: "$$",
     image: `${SITE_URL}/favicon.png`,
     address: {

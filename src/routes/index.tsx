@@ -114,6 +114,8 @@ function Index() {
             <Button asChild variant="outline" size="lg">
               <a
                 href={BUSINESS.phoneHref}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => trackEvent("phone_clicked", { location: "small_jobs" })}
               >
                 {t("cta.callNow")}

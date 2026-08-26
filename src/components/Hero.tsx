@@ -47,6 +47,8 @@ export function Hero() {
             <Button asChild variant="onDark" size="xl">
               <a
                 href={BUSINESS.phoneHref}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => trackEvent("phone_clicked", { location: "hero" })}
               >
                 {t("cta.callNow")}

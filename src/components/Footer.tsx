@@ -135,6 +135,8 @@ export function Footer() {
         <div className="mt-12 grid gap-4 border-t border-border pt-8 text-sm text-muted-foreground sm:grid-cols-3">
           <a
             href={BUSINESS.phoneHref}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => trackEvent("phone_clicked", { location: "footer" })}
             className="inline-flex items-center gap-2 hover:text-foreground"
           >

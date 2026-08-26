@@ -81,7 +81,9 @@ function SolutionDetail() {
               <Link to="/request-a-quote">{t("cta.pricing")}</Link>
             </Button>
             <Button asChild variant="onDark" size="lg">
-              <a href={BUSINESS.phoneHref}>{t("cta.callNow")}</a>
+              <a href={BUSINESS.phoneHref} target="_blank" rel="noopener noreferrer">
+                {t("cta.callNow")}
+              </a>
             </Button>
           </div>
         </div>

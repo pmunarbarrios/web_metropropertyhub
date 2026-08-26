@@ -16,7 +16,7 @@ export const en = {
   "cta.learnMore": "Learn More",
   "cta.explore": "Explore Our Services",
   "cta.chat": "Chat With Us",
-  "cta.call": "Call Now",
+  "cta.call": "WhatsApp Us",
   "cta.viewAll": "View All Services",
 
   "hero.headline": "Small Property Jobs. Professional Service. Across NYC.",
@@ -198,7 +198,7 @@ export const en = {
   "reviews.why2": "A named contact who answers your calls and messages.",
   "reviews.why3": "Photos of the finished work on request.",
   "reviews.why4": "No job too small — one room or one unit is normal for us.",
-  "cta.callNow": "Call Now",
+  "cta.callNow": "Text Us on WhatsApp",
   "cta.pricing": "Get Pricing",
   "cta.availability": "Check Availability",
   "cta.viewSolutions": "See how we work",
