@@ -33,7 +33,7 @@ const EMPTY: FormState = {
 const boroughs = ["Staten Island", "Brooklyn", "Queens", "Manhattan", "Bronx"];
 
 export function QuoteForm({ initialService }: { initialService?: string }) {
-  const { t } = useI18n();
+  const { lang, t } = useI18n();
   const [values, setValues] = useState<FormState>({
     ...EMPTY,
     service: matchService(initialService),
